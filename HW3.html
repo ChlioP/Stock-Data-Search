@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Search</title>
+    <link rel="stylesheet" type="text/css" href="/static/HW3.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+
+</head>
+<body>
+    <div class="form-container">
+        <form id="searchForm">
+            <h1>Stock Search</h1>
+            <div class="input-stock">
+                <label for="symbol">Enter Stock Ticker Symbol <span>*</span></label>
+                <input type="text" id="symbol" name="symbol" required>
+            </div>
+            <div class="btn-box">
+                <button type="submit" id="searchBtn">Search</button>
+                <button type="button" id="clearBtn">Clear</button>
+            </div>
+        </form>
+</div>
+<div class="tabs">
+    <button class="tablink" data-tab="outlook" onclick="openTab(event)">Company Outlook</button>
+    <button class="tablink" data-tab="summary" onclick="openTab(event)">Stock Summary</button>
+    <!-- <button class="tablink" data-tab="charts" onclick="openTab(event)">Charts</button>
+    <button class="tablink" data-tab="news" onclick="openTab(event)">Latest New</button> -->
+</div>
+<div id="outlook" class="tabcontent">
+    <table id="companyInfoTable" class="info-table">
+        <tr>
+            <th>Company Name</th>
+            <td id="companyName"></td>
+        </tr>
+        <tr>
+            <th>Ticker Symbol</th>
+            <td id="tickerSymbol"></td>
+        </tr>
+        <tr>
+            <th>Exchange Code</th>
+            <td id="exchangeCode"></td>
+        </tr>
+        <tr>
+            <th>Start Date</th>
+            <td id="startDate"></td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td id="description"></td>
+        </tr>
+    </table>
+    <div id="outlook-error" ></div>
+</div>
+
+<div id="summary" class="tabcontent">
+    <table id="stockInfoTable" class="info-table">
+        <tr>
+            <tr>
+                <th>Ticker Symbol</th>
+                <td id="stockTicker"></td>
+            </tr>
+            <tr>
+                <th>Trading Day</th>
+                <td id="stockDay"></td>
+            </tr>
+            <tr>
+                <th>Previous Close</th>
+                <td id="stockPrevClose"></td>
+            </tr>
+            <tr>
+                <th>Opening Price</th>
+                <td id="stockOpen"></td>
+            </tr>
+            <tr>
+                <th>High Price</th>
+                <td id="stockHigh"></td>
+            </tr>
+            <tr>
+                <th>Low Price</th>
+                <td id="stockLow"></td>
+            </tr>
+            <tr>   
+                <th>Last Price</th>
+                <td id="stockLast"></td>
+            </tr> 
+            <tr>
+                <th>Change</th>
+                <td id="stockChange"></td>
+            </tr>
+            <tr>
+                <th>Change Percent</th>
+                <td id="stockChangePercent"></td>
+            </tr>
+            <tr>
+                <th>Volume</th>
+                <td id="stockVolume"></td>
+            </tr>
+
+    </table>
+    <div id="summary-error" ></div>
+</div>
+
+
+<!-- <div id="charts" class="tabcontent">
+    <canvas id="stockChart" width="400" height="400"></canvas>
+</div>
+
+<div id="news" class="tabcontent">
+    <ul id="newsList"></ul>
+</div> -->
+
+<div id="results"></div>
+
+    <script src="/static/HW3.js">
+        console.log("Script loaded successfully.");
+    </script>
+
+</body>
+</html>
