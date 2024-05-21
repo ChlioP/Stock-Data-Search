@@ -10,11 +10,11 @@ logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__, static_url_path='/static', static_folder='static')
 CORS(app)
 
-TIINGO_API_KEY = '07a4095a44e3dcfa2e358c1c6668f774c70b1cbc'
+TIINGO_API_KEY = 'YOUR_API_KEY'
 
 @app.route('/')
 def home():
-    return render_template('HW3.html')
+    return render_template('StockSearch.html')
 
 
 def get_tingo_data(endpoint, ticker_symbol, additional_params=None):
